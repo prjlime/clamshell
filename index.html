@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clamshell | prj lime imprint</title>
+    <title>clamshell</title>
     <style>
-        /* RESET AND LAYOUT SETUP */
+        /* 1. RESET & SYSTEM BACKGROUND */
         body, html {
             margin: 0;
             padding: 0;
@@ -14,75 +14,131 @@
             background-color: #0b0b0d;
             font-family: 'Courier New', Courier, monospace;
             color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            overflow-x: hidden;
         }
 
-        /* CARD STYLING */
-        .content-box {
+        /* 2. BAND HEADER */
+        header {
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.01);
-            backdrop-filter: blur(10px);
-            border-radius: 4px;
-            max-width: 450px;
-            width: 90%;
+            padding: 80px 20px 40px 20px;
         }
 
-        /* TYPOGRAPHY ARCHITECTURE */
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: normal;
-            letter-spacing: 6px;
-            margin: 0 0 15px 0;
-            color: #adebb3;
+            letter-spacing: 8px;
+            margin: 0 0 10px 0;
+            color: #adebb3; /* Matches your core clamshell color */
+            text-shadow: 0 0 10px rgba(173, 235, 179, 0.2);
         }
-        .meta-line {
+
+        .subtitle {
             font-size: 0.9rem;
             color: #555555;
-            margin: 5px 0;
-            letter-spacing: 1px;
-            line-height: 1.6;
-        }
-        .highlight {
-            color: #ffffff;
+            letter-spacing: 3px;
+            margin: 0;
         }
 
-        /* BACK BUTTON COMPONENT */
-        .back-btn {
-            display: inline-block;
-            margin-top: 35px;
-            padding: 10px 20px;
-            font-size: 0.8rem;
-            color: #666666;
-            text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.05);
+        /* 3. LINK GRID CONTAINER */
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+            box-sizing: border-box;
+        }
+
+        /* 4. BAND LINK BUTTONS */
+        .band-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             border-radius: 4px;
-            letter-spacing: 2px;
+            text-decoration: none;
+            color: #ffffff;
+            box-sizing: border-box;
             transition: all 0.3s ease;
         }
+
+        .band-link:hover {
+            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(173, 235, 179, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .link-title {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .link-handle {
+            font-size: 0.85rem;
+            color: #555555;
+            letter-spacing: 1px;
+        }
+
+        /* Hover Glow Effects */
+        .roblox-link:hover .link-title {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+        }
+
+        .soundcloud-link:hover .link-title {
+            color: #adebb3;
+            text-shadow: 0 0 8px rgba(173, 235, 179, 0.4);
+        }
+
+        /* RETURN NAVIGATION */
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 40px auto 0 auto;
+            color: #444444;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
         .back-btn:hover {
             color: #9bf00b;
-            border-color: rgba(155, 240, 11, 0.2);
-            background: rgba(255, 255, 255, 0.01);
         }
     </style>
 </head>
 <body>
 
-    <!-- SUBFOLDER NODE CONTENT -->
-    <div class="main-content">
-        <div class="content-box">
-            <h1>clamshell</h1>
-            <!-- Updated Descriptive Subtitle -->
-            <p class="meta-line">musical subsidiary</p>
-            <p class="meta-line">managed by <span class="highlight">[wazooks]</span></p>
-            <p class="meta-line">under license to prj lime</p>
-            
-            <a href="../" class="back-btn">&lt; return to prj lime</a>
-        </div>
+    <!-- BAND HEADER -->
+    <header>
+        <h1>clamshell</h1>
+        <div class="subtitle">music & links</div>
+    </header>
+
+    <!-- CONTENT CONTAINING BOTH DIRECT LINKS -->
+    <div class="link-container">
+
+        <!-- ROBLOX LINK CARD -->
+        <a href="https://www.roblox.com/users/11117733148/profile" target="_blank" class="band-link roblox-link">
+            <div class="link-title">roblox</div>
+            <div class="link-handle">@clamshellband</div>
+        </a>
+
+        <!-- SOUNDCLOUD LINK CARD -->
+        <a href="https://soundcloud.com/clamshellband" target="_blank" class="band-link soundcloud-link">
+            <div class="link-title">soundcloud</div>
+            <div class="link-handle">/clamshellband</div>
+        </a>
+
+        <!-- RETURN NAVIGATION -->
+        <a href="../" class="back-btn">&lt; back to directory</a>
+
     </div>
 
 </body>
